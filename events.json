@@ -1,0 +1,28 @@
+[
+  {
+    "trip_id": "100",
+    "event_id": "456",
+    "location": "41.9, 12.5",
+    "photos": [
+                "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg",
+                "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
+                "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy.jpg"
+    ],
+    "start_time": "1:30 pm",
+    "end_time": "3:30 pm",
+    "description": "The Colosseum was built as part of an imperial effort to revitalize Rome after the tumultuous year of the four emperors, 69 CE. As with other amphitheatres, the emperor Vespasian intended the Colosseum to be an entertainment venue, hosting gladiator fights, animal hunts, and even mock naval battles.",
+    "start_date": "4-13-2021",
+    "end_date": "4-13-2021",
+    "cost": "10",
+    "transportation": "bus",
+    "mandatory": "false",
+    "attending": [],
+    "important_info": {
+                        "embassy_phone": "123456789",
+                        "embassy_location": "45, 11",
+                        "popo_phone": "54321",
+                        "popo_location": "43, 12",
+                        "hospital_location": "43, 8",
+    }
+  }
+]
