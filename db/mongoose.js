@@ -13,6 +13,7 @@ const eventSchema = new mongoose.Schema(
   {
     "trip_id": Number,
     "event_id": Number,
+    "event_name": String,
     "latitude": Number,
     "longitude": Number,
     "photos": [String],
@@ -24,7 +25,7 @@ const eventSchema = new mongoose.Schema(
     "cost": Number,
     "transportation": String,
     "mandatory": Boolean,
-    "attending": [{ "student_id": Number, "notes": String}],
+    "attending": [{ "user_id": Number, "notes": String}],
     "important_info": {
                         "embassy_phone": Number,
                         "embassy_location_latitude": Number,
