@@ -50,3 +50,7 @@ COPY trip_important_info(popo_phone, popo_location, popo_latitude, popo_longitud
 FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/trip_important_info.csv'
 DELIMITER ','
 CSV HEADER;
+
+GRANT ALL ON TABLE users TO travelbug;
+GRANT ALL ON TABLE trips TO travelbug;
+GRANT ALL ON TABLE trip_important_info TO travelbug;
