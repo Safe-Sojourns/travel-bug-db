@@ -3,7 +3,9 @@
     "trip_id": "100",
     "event_id": "453",
     "event_name": "Morning Orientation",
-    "location": "41.90779120513614, 12.475337914617127",
+    "location": "Via del Fiume, 00186 Roma RM, Italy",
+    "latitude": "41.90779120513614",
+    "longitude": "12.475337914617127",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipPH-TxgbJo1EW89vIhzZy2OD90jAl86tU0d_Dd1=w408-h306-k-no"
     ],
@@ -32,7 +34,9 @@
     "trip_id": "100",
     "event_id": "454",
     "event_name": "Afternoon walking tour",
-    "location": "41.88555686126655, 12.454220464927774",
+    "location": "Piazza di S. Pancrazio, 9, 00152 Roma RM, Italy",
+    "latitude": "41.88555686126655",
+    "longitude": "12.454220464927774",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipPV7dB2OsTHyLMRK5LMkw3Nkx5TUcHMQJ74D2ha=w428-h240-k-no"
     ],
@@ -61,7 +65,9 @@
     "trip_id": "100",
     "event_id": "455",
     "event_name": "Evening group welcome meal",
-    "location": "41.90779120513614, 12.475337914617127",
+    "location": "Via del Fiume, 00186 Roma RM, Italy",
+    "latitude": "41.90779120513614",
+    "longitude": "12.475337914617127",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipO2bNWk4UtgKZlW7nhovrerXAVUrCDnBT7tRPGv=w408-h271-k-no"
     ],
@@ -90,7 +96,9 @@
     "trip_id": "100",
     "event_id": "456",
     "event_name": "Colosseum Tour",
-    "location": "41.89036192863428, 12.49223089812222",
+    "location": "Colosseo, 00184 Roma RM, Italy",
+    "latitude": "41.89036192863428",
+    "longitude": "12.49223089812222",
     "photos": [
                 "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg",
                 "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
@@ -121,7 +129,9 @@
     "trip_id": "100",
     "event_id": "457",
     "event_name": "Pantheon Tour",
-    "location": "41.89946704643488, 12.47670910578378",
+    "location": "Piazza della Rotonda, 00186 Roma RM, Italy",
+    "latitude": "41.89946704643488",
+    "longitude": "12.47670910578378",
     "photos": [
                 "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg",
                 "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
@@ -153,7 +163,9 @@
     "trip_id": "100",
     "event_id": "459",
     "event_name": "Vatican Museums",
-    "location": "41.9091121019387, 12.454169856203686",
+    "location": "Via Tolemaide, 1-23, 00192 Roma RM, Italy",
+    "latitude": "41.9091121019387",
+    "longitude": "12.454169856203686",
     "photos": [
                 "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg",
                 "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
@@ -184,7 +196,9 @@
     "trip_id": "100",
     "event_id": "460",
     "event_name": "Morning class",
-    "location": "41.88958238523633, 12.445036581260771",
+    "location": "Via Giovanni Bessarione, 33, 00165 Roma RM, Italy",
+    "latitude": "41.88958238523633",
+    "longitude": "12.445036581260771",
     "photos": [
                 "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg",
                 "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
@@ -215,7 +229,9 @@
     "trip_id": "100",
     "event_id": "461",
     "event_name": "Brunelleschi's famous Dome",
-    "location": "41.919342104164876, 12.459868464706528",
+    "location": "Viale Carso, 17/19/21, 00195 Roma RM, Italy",
+    "latitude": "41.919342104164876",
+    "longitude": "12.459868464706528",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOiIHyOVLiBJJ0R_VtAI_BFj60FMEVfD896LGne=w408-h306-k-no"
     ],
@@ -245,7 +261,9 @@
     "trip_id": "100",
     "event_id": "462",
     "event_name": "Music Bridge",
-    "location": "41.92700549428365, 12.45965388767013",
+    "location": "Italy",
+    "latitude": "41.92700549428365",
+    "longitude": "12.45965388767013",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipPlqeP6p1_1kvi82PKnfTAF6Zbe4Sx8m2Zv5NUw=w426-h240-k-no"
     ],
@@ -274,7 +292,9 @@
     "trip_id": "100",
     "event_id": "463",
     "event_name": "Morning class 2",
-    "location": "42.88958238523633, 11.445036581260771",
+    "location": "58044 Cinigiano, Province of Grosseto, Italy",
+    "latitude": "42.88958238523633",
+    "longitude": "11.445036581260771",
     "photos": [
                 ""
     ],
@@ -303,7 +323,9 @@
     "trip_id": "100",
     "event_id": "464",
     "event_name": "Chiesa di Santa Maria della Vittoria",
-    "location": "41.919342104164876, 12.459868464706528",
+    "location": "58044 Cinigiano, Province of Grosseto, Italy",
+    "latitude": "41.919342104164876",
+    "longitude": "12.459868464706528",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOiIHyOVLiBJJ0R_VtAI_BFj60FMEVfD896LGne=w408-h306-k-no"
     ],
@@ -333,7 +355,9 @@
     "trip_id": "100",
     "event_id": "465",
     "event_name": "Uffizi Gallery",
-    "location": "41.92288040449814, 12.494834201652266",
+    "location": "Via Lima, 2-20, 00198 Roma RM, Italy",
+    "latitude": "41.92288040449814",
+    "longitude": "12.494834201652266",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipNd6VV_jydURapuQhYYH2DNyySkFhYEZhIB25Y=w408-h306-k-no"
     ],
@@ -362,7 +386,9 @@
     "trip_id": "100",
     "event_id": "466",
     "event_name": "Morning class 3",
-    "location": "41.862207783951455, 12.508887546916425",
+    "location": "Via Appia Antica, 93-87, 00178 Roma RM, Italy",
+    "latitude": "41.862207783951455",
+    "longitude": "12.508887546916425",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOt_Dj7INFpFZb7pHeeUcy0GjcMIHde9bdjZcbP=w408-h306-k-no"
     ],
@@ -391,7 +417,9 @@
     "trip_id": "100",
     "event_id": "467",
     "event_name": "Quartiere XX Ardeatino",
-    "location": "41.85342628998527, 12.496325576286827",
+    "location": "Via Andrea Mantegna, 125, 00147 Roma RM, Italy",
+    "latitude": "41.85342628998527",
+    "longitude": "12.496325576286827",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipMEjuh68Jor8lzCGb3JFfRTV2AClxL9CePxyS-f=w408-h544-k-no"
     ],
@@ -421,7 +449,9 @@
     "trip_id": "100",
     "event_id": "468",
     "event_name": "Auditorium Parco della Musica",
-    "location": "41.93032726977522, 12.474898468186566",
+    "location": "Via Gran Bretagna, 51-17, 00196 Roma RM, Italy",
+    "latitude": "41.93032726977522",
+    "longitude": "12.474898468186566",
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipNd6VV_jydURapuQhYYH2DNyySkFhYEZhIB25Y=w408-h306-k-no"
     ],
