@@ -10,7 +10,7 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+[![Forks][forks-shield]][	https://img.shields.io/github/forks/Safe-Sojourns/travel-bug-db]
 [![Stargazers][stars-shield]][stars-url]
 
 
