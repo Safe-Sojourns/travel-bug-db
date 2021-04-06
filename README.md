@@ -12,7 +12,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Mongoose][mongoose-shield]][mongoose-url]
+![Mongoose][mongoose-shield]
 
 
 <!-- PROJECT LOGO -->
