@@ -8,12 +8,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -28,19 +22,8 @@
 </p>
 
 
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
 
 npm install
 
@@ -66,35 +49,35 @@ API should run on port [3001]
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-**[/]**
+**/**
 Sends routes options
 
-**[/logallevents]**
+**/logallevents**
 Endpoint to log all Events
 
-**[/logallusers]**
+**/logallusers**
 Endpoint to log all users
 
-**[/logalltrips]**
+**/logalltrips**
 
-**[/importmongodb]**
+**/importmongodb**
 Endpoint to import entire dummy mongo data
 
-**[/deletemongodb]**
+**/deletemongodb**
 Endpoint to delete entire mongo database. Big red button
 
-**[/api/events/:tripId/:date]**
+**/api/events/:tripId/:date**
 Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 
-**[/api/events]**
+**/api/events**
 Endpoint to create event. Passed into body property.
 
-**[/api/events/:event_id]**
+**/api/events/:event_id**
 Enpoint to get all information about a specific event. Requires event if passed into url
 
-**[/api/notes]**
+**/api/notes**
 Endpoint to update a users notes. Requires users id and notes string passed into body
 
-**[/api/users/:email]**
+**/api/users/:email**
 Endpoint to get all users information. Requires an email passed into url:
 
