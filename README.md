@@ -15,7 +15,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Safe-Sojourns/travel-bug-db">
-    <img src="images/ladybird.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/ladybug.png" alt="Logo" width="90" height="90">
   </a>
 
   <h3 align="center">TravelBug API</h3>
