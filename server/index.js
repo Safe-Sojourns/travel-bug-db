@@ -16,9 +16,8 @@ app.get('/', (req, res) => {
 
 app.get('/logalldata', (req, res) => {
   mdb.find({})
-  .then(response => console.log(response))
+  .then(response => res.send(response))
   .catch(err => console.log(err));
-  res.send('Data logged in server')
 })
 
 app.get('/importmongodb', (req, res) => {
@@ -42,7 +41,6 @@ app.get('/deletemongodb', (req, res) => {
 // get specific event - input params: specific date & trip id - return all events that match input params
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
-  // const MDB_Query = { trip_id: {tripId} }
   const MDB_Query = { trip_id: tripId, start_time: { $regex: `${date}`}}
   mdb.find(MDB_Query).exec()
   .then((events) => res.send(events))
@@ -53,32 +51,44 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 })
 
 // post events
-{
-  "trip_id": Number,
-  "event_name": String,
-  "location": String,
-  "latitude": Number,
-  "longitude": Number,
-  "photos": [String],
-  "start_time": String,
-  "end_time": String,
-  "description": String,
-  "start_date": String,
-  "end_date": String,
-  "cost": Number,
-  "transportation": String,
-  "mandatory": Boolean,
-  "important_info": {
-    "embassy_phone": Number,
-    "embassy_location_latitude": Number,
-    "embassy_location_longitude": Number,
-    "popo_phone": Number,
-    "popo_location_latitude": Number,
-    "popo_location_longitude": Number,
-    "hospital_location_latitude": Number,
-    "hospital_location_longitude": Number,
-  }
-}
+app.post('/api/events', (req, res) => {
+  console.log(req.body);
+  const MDB_Query = {
+    "trip_id": req.body.trip_id,
+    "event_name": req.body.event_name,
+    "location": req.body.location,
+    "latitude": req.body.latitude,
+    "longitude": req.body.longitude,
+    "photos": req.body.photos,
+    "start_time": req.body.start_time,
+    "end_time": req.body.end_time,
+    "description": req.body.description,
+    "start_date": req.body.start_date,
+    "end_date": req.body.end_date,
+    "cost": req.body.cost,
+    "transportation": req.body.transportation,
+    "mandatory": req.body.mandatory,
+    "important_info": {
+      "embassy_phone": req.body.embassy_phone,
+      "embassy_location_latitude": req.body.embassy_location_latitude,
+      "embassy_location_longitude": req.body.embassy_location_longitude,
+      "popo_phone": req.body.popo_phone,
+      "popo_location_latitude": req.body.popo_location_latitude,
+      "popo_location_longitude": req.body.popo_location_longitude,
+      "hospital_location_latitude": req.body.hospital_location_latitude,
+      "hospital_location_longitude": req.body.hospital_location_longitude,
+    }
+  };
+  mdb.create(MDB_Query)
+  .then(() => {
+    res.status(201);
+    res.send('Successfully created event');
+  })
+  .catch((error) => {
+    res.status(500);
+    res.send('Error creating event');
+  });
+});
 
 // get event - event_id - all
 app.get('/api/events/:event_id', (req, res) => {
