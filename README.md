@@ -94,4 +94,4 @@ Endpoint to get all users information. Requires an email passed into url:
 [forks-url]: https://github.com/Safe-Sojourns/travel-bug-db/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/Safe-Sojourns/travel-bug-db/stargazers
-[mongoose-url]: https://img.shields.io/badge/mongoose-v5.12.3-blue
+[mongoose-shield]: https://img.shields.io/badge/mongoose-v5.12.3-blue
