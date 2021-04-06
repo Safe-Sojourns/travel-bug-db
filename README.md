@@ -43,6 +43,7 @@ CSV HEADER;
 3. Run command in terminal to setup PostgreSQL database: psql postgres < ./db/schema.sql
 
 4. Start the server: npm start
+
 API should run on port [3001]
 
 5. Import the mongo database by connecting to the endpoint: http://localhost:3001/importmongodb
