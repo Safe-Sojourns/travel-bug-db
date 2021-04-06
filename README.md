@@ -10,8 +10,8 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[!Issues][issues-shield]][issues-url]
-[![Mongoose][mongoose-shield]]
+!Issues][issues-shield][issues-url]
+![Mongoose][mongoose-shield]
 <!-- [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 -->
