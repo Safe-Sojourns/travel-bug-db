@@ -10,7 +10,7 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[!Issues][issues-shield]]
+[!Issues][issues-shield]][issues-url]
 [![Mongoose][mongoose-shield]]
 <!-- [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -99,3 +99,4 @@ Endpoint to get all users information. Requires an email passed into url:
 [stars-url]: https://github.com/Safe-Sojourns/travel-bug-db/stargazers
 [mongoose-shield]: https://img.shields.io/badge/mongoose-v5.12.3-blue
 [issues-shield]: https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db
+[issues-url]: https://github.com/Safe-Sojourns/travel-bug-db/issues
