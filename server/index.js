@@ -11,15 +11,38 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-  res.send('options - /logalldata /importmongodb /deletemongodb')
+  res.send('options - /logallevents /importmongodb /deletemongodb')
 })
 
-app.get('/logalldata', (req, res) => {
+//  Endpoint to log all Events
+app.get('/logallevents', (req, res) => {
   mdb.find({})
   .then(response => res.send(response))
   .catch(err => console.log(err));
 })
 
+//  Endpoint to log all users
+app.get('/logallusers', (req, res) => {
+  pdb.query('SELECT * FROM users')
+  .then(response => res.send(response.rows))
+  .catch(error => console.log(error));
+});
+
+//  Endpoint to log all important info
+app.get('/logallimportantinfo', (req, res) => {
+  pdb.query('SELECT * FROM trip_important_info')
+  .then(response => res.send(response.rows))
+  .catch(error => console.log(error));
+});
+
+//  Endpoint to log all trips
+app.get('/logalltrips', (req, res) => {
+  pdb.query('SELECT * FROM trips')
+  .then(response => res.send(response.rows))
+  .catch(error => console.log(error));
+});
+
+//  Endpoint to import entire dummy mongo data
 app.get('/importmongodb', (req, res) => {
   mdb.insertMany(mongoData)
   .then(() => res.send('Successfully inserted fake data'))
@@ -29,6 +52,7 @@ app.get('/importmongodb', (req, res) => {
   })
 });
 
+//  Endpoint to delete entire mongo database. Big red button
 app.get('/deletemongodb', (req, res) => {
   mdb.deleteMany({})
   .then(() => res.send('Successfully deleted fake data'))
@@ -38,7 +62,7 @@ app.get('/deletemongodb', (req, res) => {
   })
 });
 
-// get specific event - input params: specific date & trip id - return all events that match input params
+//  Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
   const MDB_Query = { trip_id: tripId, start_time: { $regex: `${date}`}}
@@ -50,7 +74,7 @@ app.get('/api/events/:tripId/:date', (req, res) => {
   })
 })
 
-// post events
+//  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
   console.log(req.body);
   const MDB_Query = {
@@ -90,7 +114,7 @@ app.post('/api/events', (req, res) => {
   });
 });
 
-// get event - event_id - all
+//  Enpoint to get all information about a specific event. Requires event if passed into url
 app.get('/api/events/:event_id', (req, res) => {
   const { event_id } = req.params;
   const MDB_Query = `${event_id}`
@@ -106,11 +130,12 @@ app.get('/api/events/:event_id', (req, res) => {
   })
 })
 
-// post notes - user_id - notes
+//  Endpoint to update a users notes. Requires users id and notes string passed into body
 app.post('/api/notes', (req, res) => {
-  const { id } = req.body;
-  const PDB_Query = `SELECT * FROM users WHERE id = $1`;
-  pdb.query(PDB_Query, [id])
+  const { id, notes } = req.body;
+  const PDB_Query = `UPDATE users SET notes = $1 WHERE id = $2`;
+  console.log('testing postgres');
+  pdb.query(PDB_Query, [notes, id])
   .then(response => {
     res.status(201);
     res.send(response.rows);
@@ -122,7 +147,7 @@ app.post('/api/notes', (req, res) => {
   });
 });
 
-// get user info - user_id - notes
+//  Endpoint to get all users information. Requires an email passed into url
 app.get('/api/users/:email', (req, res) => {
   const { email } = req.params;
   const PDB_Query = `SELECT * FROM users WHERE email = $1`;
@@ -135,6 +160,23 @@ app.get('/api/users/:email', (req, res) => {
     console.log(error);
     res.status(500);
     res.send('No user exists with that given email');
+  });
+});
+
+//  Endpoint to get all trip important information. Requires trip id passed into url
+app.get('/api/trips/:trip_id', (req, res) => {
+  const { trip_id } = req.params;
+  console.log(trip_id);
+  const PDB_Query = `SELECT * FROM trip_important_info WHERE trip_id = $1`;
+
+  pdb.query(PDB_Query, [trip_id])
+  .then(response => {
+    res.send(response.rows);
+  })
+  .catch((error) => {
+    console.log(error);
+    res.status(500);
+    res.send('No trips exists with that given id');
   });
 });
 

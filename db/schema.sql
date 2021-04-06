@@ -1,9 +1,8 @@
+CREATE DATABASE travelbug_db;
+
+CREATE USER travelbug WITH PASSWORD 'travelbug';
 
 \c travelbug_db;
-
-DROP TABLE IF EXISTS trip_important_info;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS trips;
 
 CREATE TABLE trips(
   id SERIAL PRIMARY KEY,
@@ -20,6 +19,9 @@ CREATE TABLE users(
   notes VARCHAR(450),
   trip_id INT,
   "number" VARCHAR(12),
+  homebase_long NUMERIC(17, 14),
+  homebase_lat NUMERIC(17, 14),
+  homebase_location VARCHAR(200),
   FOREIGN KEY (trip_id) REFERENCES trips (id)
 );
 
@@ -33,6 +35,9 @@ CREATE TABLE trip_important_info (
   hospital_latitude NUMERIC(17, 14),
   hospital_longitude NUMERIC(17, 14),
   trip_id INT,
+  us_embassy_location VARCHAR(200),
+  us_embassy_latitude NUMERIC(17, 14),
+  us_embassy_longitude NUMERIC(17, 14),
   FOREIGN KEY (trip_id) REFERENCES trips(id)
 );
 
@@ -41,12 +46,12 @@ FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/trips.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY users(firstName, lastName, email, "admin",trip_id , "number")
+COPY users(firstName, lastName, email, "admin",trip_id , "number", homebase_long, homebase_lat, homebase_location)
 FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/users.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY trip_important_info(popo_phone, popo_location, popo_latitude, popo_longitude, hospital_location, hospital_latitude, hospital_longitude, trip_id)
+COPY trip_important_info(popo_phone, popo_location, popo_latitude, popo_longitude, hospital_location, hospital_latitude, hospital_longitude, trip_id, us_embassy_location, us_embassy_latitude, us_embassy_longitude)
 FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/trip_important_info.csv'
 DELIMITER ','
 CSV HEADER;
