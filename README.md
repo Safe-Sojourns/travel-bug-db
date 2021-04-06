@@ -10,7 +10,7 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]]https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db
+[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 
 
@@ -87,7 +87,7 @@ Endpoint to get all users information. Requires an email passed into url:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-2-blue
 [contributors-url]: https://github.com/Safe-Sojourns/travel-bug-db/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/Safe-Sojourns/travel-bug-db/members
