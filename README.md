@@ -59,6 +59,8 @@ API should run on port [3001]
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
+**GET**
+
 **/**  <br />
 Sends routes options
 
@@ -101,12 +103,16 @@ Endpoint to get all users information. Requires an email passed into url:
 **/api/trips/:trip_id** <br />
 Endpoint to get important trip info by trip id
 
+**PUT**
+
 **/api/criticalseen** <br />
 Endpoint to PUT user email into critical seen list. requires JSON <br />
 { <br />
   "_id": "critical message id", <br />
   "email": "email of user that saw the message" <br />
 } <br />
+
+**POST**
 
 **/api/postmessage** <br />
 Endpoint to POST user message. requires JSON <br />
