@@ -10,6 +10,7 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
+[![GitHub issues](https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db)](https://github.com/Safe-Sojourns/travel-bug-db/issues)
 ![Mongoose][mongoose-shield]
 <!-- [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
