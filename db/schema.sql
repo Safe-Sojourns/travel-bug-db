@@ -22,6 +22,7 @@ CREATE TABLE users(
   homebase_long NUMERIC(17, 14),
   homebase_lat NUMERIC(17, 14),
   homebase_location VARCHAR(200),
+  UNIQUE (email),
   FOREIGN KEY (trip_id) REFERENCES trips (id)
 );
 
@@ -41,6 +42,17 @@ CREATE TABLE trip_important_info (
   FOREIGN KEY (trip_id) REFERENCES trips(id)
 );
 
+CREATE TABLE messages (
+  id SERIAL PRIMARY KEY,
+  trip_id INT,
+  "message" TEXT,
+  user_email VARCHAR(100),
+  critical BOOLEAN,
+  "date" VARCHAR(100),
+  FOREIGN KEY (trip_id) REFERENCES trips(id),
+  FOREIGN KEY (user_email) REFERENCES users(email)
+);
+
 COPY trips("name", "description")
 FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/trips.csv'
 DELIMITER ','
@@ -56,6 +68,12 @@ FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/trip_important_i
 DELIMITER ','
 CSV HEADER;
 
+COPY messages(trip_id, "message", user_email, critical, "date")
+FROM '/Users/chrisholley/hackReactor/blueOcean/travel-bug-db/db/messages.csv'
+DELIMITER ','
+CSV HEADER;
+
 GRANT ALL ON TABLE users TO travelbug;
 GRANT ALL ON TABLE trips TO travelbug;
 GRANT ALL ON TABLE trip_important_info TO travelbug;
+GRANT ALL ON TABLE messages TO travelbug;

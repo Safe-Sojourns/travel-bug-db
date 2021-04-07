@@ -1,0 +1,18 @@
+[
+  {
+  "trip_id": "1",
+  "message_id": "3",
+  "seen_by_user_email": [
+    "aaronfink@tempmail.com",
+    "chrisholley@tempmail.com"
+    ]
+  },
+  {
+    "trip_id": "1",
+    "message_id": "11",
+    "seen_by_user_email": [
+      "aaronfink@tempmail.com",
+      "chrisholley@tempmail.com"
+    ]
+  }
+]

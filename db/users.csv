@@ -1,20 +1,20 @@
-firstName,lastName,email,admin,trip_id,number, homebase_long, homebase_lat, homebase_location
+firstName,lastName,email,admin,trip_id,number,homebase_long,homebase_lat,homebase_location
 Aaron,Fink,aaronfink@tempmail.com,FALSE,1,4255555551,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
-Adam,Whitman,adamwhitman@tempmail.com,FALSE,1,4255555552, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Alex,Duncan,alexduncan@tempmail.com,FALSE,1,4255555553, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Bryan,Clark,bryanclark@tempmail.com,FALSE,1,4255555554, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Chris,Holley,chrisholley@tempmail.com,FALSE,1,4255555555, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Dani,Tian,danitian@tempmail.com,FALSE,1,4255555556, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Eric,Hernandez,erichernandez@tempmail.com,FALSE,1,4255555557, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Gabe,Chacon,gabechacon@tempmail.com,FALSE,1,4255555558, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Greta,Schock,gretaschock@tempmail.com,FALSE,1,4255555559, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Jesse,Smith,jessesmith@tempmail.com,FALSE,1,4255555560, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-John,Kwak,johnkwak@tempmail.com,FALSE,1,4255555561, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Louisa,Janssen,louisajanssen@tempmail.com,FALSE,1,4255555562, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Luci,Pak,lucipak@tempmail.com,FALSE,1,4255555563, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Pete,Cowles,petecowles@tempmail.com,FALSE,1,4255555564, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Sam,Sparks,samsparks@tempmail.com,FALSE,1,4255555565, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Sheeba,Nair,sheebanair@tempmail.com,FALSE,1,4255555566, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Ming,Wen,mingwen@tempmail.com,FALSE,1,4255555567, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Katie,Papke,katiepapke@tempmail.com,TRUE,1,4255555568, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
-Anthony,Patterson,anthonypatterson@tempmail.com,TRUE,1,4255555569, 41.89120567562281, 12.492213019651428, Piazza del Colosseo 1 00184 Roma RM Italy
+Adam,Whitman,adamwhitman@tempmail.com,FALSE,1,4255555552,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Alex,Duncan,alexduncan@tempmail.com,FALSE,1,4255555553,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Bryan,Clark,bryanclark@tempmail.com,FALSE,1,4255555554,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Chris,Holley,chrisholley@tempmail.com,FALSE,1,4255555555,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Dani,Tian,danitian@tempmail.com,FALSE,1,4255555556,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Eric,Hernandez,erichernandez@tempmail.com,FALSE,1,4255555557,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Gabe,Chacon,gabechacon@tempmail.com,FALSE,1,4255555558,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Greta,Schock,gretaschock@tempmail.com,FALSE,1,4255555559,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Jesse,Smith,jessesmith@tempmail.com,FALSE,1,4255555560,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+John,Kwak,johnkwak@tempmail.com,FALSE,1,4255555561,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Louisa,Janssen,louisajanssen@tempmail.com,FALSE,1,4255555562,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Luci,Pak,lucipak@tempmail.com,FALSE,1,4255555563,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Pete,Cowles,petecowles@tempmail.com,FALSE,1,4255555564,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Sam,Sparks,samsparks@tempmail.com,FALSE,1,4255555565,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Sheeba,Nair,sheebanair@tempmail.com,FALSE,1,4255555566,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Ming,Wen,mingwen@tempmail.com,FALSE,1,4255555567,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Katie,Papke,katiepapke@tempmail.com,TRUE,1,4255555568,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy
+Anthony,Patterson,anthonypatterson@tempmail.com,TRUE,1,4255555569,41.89120567562281,12.492213019651428,Piazza del Colosseo 1 00184 Roma RM Italy

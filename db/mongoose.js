@@ -38,4 +38,17 @@ const eventSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('Event', eventSchema);
+const criticalMessageSchema = new mongoose.Schema(
+  {
+    "trip_id": Number,
+    "message_id": Number,
+    "seen_by_user_email": [
+      String
+    ]
+  }
+);
+
+const eventModel = mongoose.model('Event', eventSchema);
+const criticalMessageModel = mongoose.model('Critical Message', criticalMessageSchema);
+
+module.exports = { eventModel, criticalMessageModel }

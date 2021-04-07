@@ -5,6 +5,7 @@ const pdb = require('../db/psql.js');
 const app = express();
 const port = 3001;
 const mongoData = require('../db/events.json');
+const mongoMessageData = require('../db/messages.json');
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -16,10 +17,16 @@ app.get('/', (req, res) => {
 
 //  Endpoint to log all Events
 app.get('/logallevents', (req, res) => {
-  mdb.find({})
-  .then(response => res.send(response))
+  mdb.eventModel.find({})
+  .then((eventResponse) => {
+    mdb.criticalMessageModel.find({})
+    .then((criticalMessageResponse) => {
+      res.send({events: eventResponse, criticalMessages: criticalMessageResponse});
+    })
+    .catch(() => res.status(500))
+  })
   .catch(err => console.log(err));
-})
+});
 
 //  Endpoint to log all users
 app.get('/logallusers', (req, res) => {
@@ -42,20 +49,40 @@ app.get('/logalltrips', (req, res) => {
   .catch(error => console.log(error));
 });
 
+// Endpoint to log all messages
+app.get('/logallmessages', (req, res) => {
+  pdb.query('SELECT * FROM messages')
+  .then(messages => {
+    mdb.criticalMessageModel.find({})
+    .then(criticalInfo => res.send({"messages": messages.rows, "criticalInfo": criticalInfo}))
+  })
+}
+
+)
+
 //  Endpoint to import entire dummy mongo data
 app.get('/importmongodb', (req, res) => {
-  mdb.insertMany(mongoData)
-  .then(() => res.send('Successfully inserted fake data'))
+  mdb.eventModel.insertMany(mongoData)
+  .then(() => {
+    mdb.criticalMessageModel.insertMany(mongoMessageData)
+    .then(() => res.send('Successfully inserted fake data'))
+    .catch(() => res.status(500))
+  })
   .catch((error) => {
     console.log(err);
+    res.status(500)
     res.send('Issue importing fake data');
   })
 });
 
 //  Endpoint to delete entire mongo database. Big red button
 app.get('/deletemongodb', (req, res) => {
-  mdb.deleteMany({})
-  .then(() => res.send('Successfully deleted fake data'))
+  mdb.eventModel.deleteMany({})
+  .then(() => {
+    mdb.criticalMessageModel.deleteMany({})
+    .then(() => res.send('Successfully deleted fake data'))
+    .catch(() => res.status(500))
+  })
   .catch((error) => {
     console.log(err);
     res.send('Issue deleting fake data');
@@ -66,7 +93,7 @@ app.get('/deletemongodb', (req, res) => {
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
   const MDB_Query = { trip_id: tripId, start_time: { $regex: `${date}`}}
-  mdb.find(MDB_Query).exec()
+  mdb.eventModel.find(MDB_Query).exec()
   .then((events) => res.send(events))
   .catch((error) => {
     console.log(error);
@@ -76,7 +103,6 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 
 //  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
-  console.log(req.body);
   const MDB_Query = {
     "trip_id": req.body.trip_id,
     "event_name": req.body.event_name,
@@ -103,7 +129,7 @@ app.post('/api/events', (req, res) => {
       "hospital_location_longitude": req.body.hospital_location_longitude,
     }
   };
-  mdb.create(MDB_Query)
+  mdb.eventModel.create(MDB_Query)
   .then(() => {
     res.status(201);
     res.send('Successfully created event');
@@ -118,7 +144,7 @@ app.post('/api/events', (req, res) => {
 app.get('/api/events/:event_id', (req, res) => {
   const { event_id } = req.params;
   const MDB_Query = `${event_id}`
-  mdb.findById(MDB_Query)
+  mdb.eventModel.findById(MDB_Query)
   .then((response) => {
     console.log(response);
     res.send(response);
@@ -180,6 +206,26 @@ app.get('/api/trips/:trip_id', (req, res) => {
   });
 });
 
+//  Endpoint to update critical messsage. Requires critcal message id and user email
+app.put('/api/criticalseen/:email/:id', (req, res) => {
+  const { _id, email } = req.params;
+  mdb.mongoMessageData.update(
+    { _id: _id },
+    { $push: {seen_by_user_email, email}}
+  )
+  .then(() => res.send('Successfully Updated'))
+  .catch((err) => {
+    console.log(err);
+    res.status(204);
+    res.send('Error Updating');
+  })
+});
+
+//  Endpoint to get all messages, identify critical messages, and send the id's of user who have seen them
+app.get('/api/')
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+module.exports = app;
