@@ -102,8 +102,8 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 //  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
   const MDB_Query = {
-    "trip_id": req.body.trip_id,
-    "event_name": req.body.event_name,
+    "trip_id": req.body.tripid,
+    "event_name": req.body.title,
     "location": req.body.location,
     "latitude": req.body.latitude,
     "longitude": req.body.longitude,
@@ -143,6 +143,22 @@ app.get('/api/events/:event_id', (req, res) => {
   const { event_id } = req.params;
   const MDB_Query = `${event_id}`
   mdb.eventModel.findById(MDB_Query)
+  .then((response) => {
+    console.log(response);
+    res.send(response);
+  })
+  .catch((error) => {
+    console.log(error);
+    res.status(500);
+    res.send('No event exists with that id');
+  })
+})
+
+//  Enpoint to get all information about a specific event. Requires event if passed into url
+app.get('/api/eventstrip/:trip_id', (req, res) => {
+  const { trip_id } = req.params;
+  const MDB_Query = {trip_id: trip_id}
+  mdb.eventModel.find(MDB_Query)
   .then((response) => {
     console.log(response);
     res.send(response);
