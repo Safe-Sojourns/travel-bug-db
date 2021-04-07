@@ -12,6 +12,7 @@
 [![Contributors](https://img.shields.io/github/contributors/Safe-Sojourns/travel-bug-db)](https://github.com/Safe-Sojourns/travel-bug-db/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db)](https://github.com/Safe-Sojourns/travel-bug-db/issues)
 ![Mongoose][mongoose-shield]
+[![pg](https://img.shields.io/badge/pg-v8.5.1-blue)]
 <!-- [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 -->
