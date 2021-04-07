@@ -56,9 +56,7 @@ app.get('/logallmessages', (req, res) => {
     mdb.criticalMessageModel.find({})
     .then(criticalInfo => res.send({"messages": messages.rows, "criticalInfo": criticalInfo}))
   })
-}
-
-)
+})
 
 //  Endpoint to import entire dummy mongo data
 app.get('/importmongodb', (req, res) => {

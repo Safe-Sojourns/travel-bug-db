@@ -68,7 +68,14 @@ Endpoint to log all Events
 **/logallusers** <br />
 Endpoint to log all users
 
+**/logallimportantinfo** <br />
+Endpoint to log all important info for all trips
+
 **/logalltrips** <br />
+Endpoint to log all trips
+
+**/logallmessages** <br />
+Endpoint to log all messages and critical status
 
 **/importmongodb** <br />
 Endpoint to import entire dummy mongo data
@@ -90,6 +97,29 @@ Endpoint to update a users notes. Requires users id and notes string passed into
 
 **/api/users/:email** <br />
 Endpoint to get all users information. Requires an email passed into url:
+
+**/api/trips/:trip_id** <br />
+Endpoint to get important trip info by trip id
+
+**/api/criticalseen** <br />
+Endpoint to PUT user email into critical seen list. requires JSON
+{
+  "_id": "critical message id",
+  "email": "email of user that saw the message"
+}
+
+**/api/postmessage** <br />
+Endpoint to POST user message. requires JSON
+{
+    "tripid": "1",
+    "message": "Hello Italy!",
+    "userEmail": "fake@email.com",
+    "critical": "boolean",
+    "date": "2021-01-06T13:20:30Z"
+}
+User that sends a critical message will be flagged as viewing the critical message. Date should be in UTC format as seen above.
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
