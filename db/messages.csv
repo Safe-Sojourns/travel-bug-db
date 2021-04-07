@@ -1,12 +1,12 @@
 trip_id,message, user_email, critical, date
-1, Hello from the colosseum!,aaronfink@tempmail.com,false,2021-04-06T13:15:30Z
-1, Hello from the past!,adamwhitman@tempmail.com,false,1994-11-05T13:15:30Z
-1, Is there really not any pineapple pizza in Rome?,katiepapke@tempmail.com,true,2021-04-06T13:20:30Z
-1, Have you seen Tsukonomi Tetsukaijin?,erichernandez@tempmail.com,false,2021-01-06T13:20:30Z
-1, Do they have elotes here? No? Vendicate!,gabechacon@tempmail.com,false,2021-01-06T13:20:30Z
-1, Have a great day!,katiepapke@tempmail.com,false,2021-04-06T13:22:30Z
-1, I brought Miko with me!,louisajanssen@tempmail.com,false,2021-01-06T13:20:30Z
-1, Burger time!,samsparks@tempmail.com,false,2021-01-06T13:20:30Z
-1, asdf,sheebanair@tempmail.com,false,2021-01-06T13:20:30Z
-1, aefefaefa,katiepapke@tempmail.com,false,2021-01-06T13:20:30Z
-1, Gig'em Aggies,anthonypatterson@tempmail.com,true,2021-01-06T13:20:30Z
+1,Hello from the colosseum!,aaronfink@tempmail.com,false,2021-04-06T13:15:30Z
+1,Hello from the past!,adamwhitman@tempmail.com,false,1994-11-05T13:15:30Z
+1,Is there really not any pineapple pizza in Rome?,katiepapke@tempmail.com,true,2021-04-06T13:20:30Z
+1,Have you seen Tsukonomi Tetsukaijin?,erichernandez@tempmail.com,false,2021-01-06T13:20:30Z
+1,Do they have elotes here? No? Vendicate!,gabechacon@tempmail.com,false,2021-01-06T13:20:30Z
+1,Have a great day!,katiepapke@tempmail.com,false,2021-04-06T13:22:30Z
+1,I brought Miko with me!,louisajanssen@tempmail.com,false,2021-01-06T13:20:30Z
+1,Burger time!,samsparks@tempmail.com,false,2021-01-06T13:20:30Z
+1,Can we rent motorcycles here?,sheebanair@tempmail.com,false,2021-01-06T13:20:30Z
+1,Give me a mountain to climb!,lucipak@tempmail.com,false,2021-01-06T13:20:30Z
+1,Gig'em Aggies,anthonypatterson@tempmail.com,true,2021-01-06T13:20:30Z

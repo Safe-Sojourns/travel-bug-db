@@ -111,11 +111,11 @@ Endpoint to PUT user email into critical seen list. requires JSON <br />
 **/api/postmessage** <br />
 Endpoint to POST user message. requires JSON <br />
 { <br />
-    "tripid": "1", <br />
-    "message": "Hello Italy!", <br />
-    "userEmail": "email", <br />
-    "critical": "boolean", <br />
-    "date": "2021-01-06T13:20:30Z" <br />
+  "tripid": "1", <br />
+  "message": "Hello Italy!", <br />
+  "userEmail": "email", <br />
+  "critical": "boolean", <br />
+  "date": "2021-01-06T13:20:30Z" <br />
 } <br />
 User that sends a critical message will be flagged as viewing the critical message. Date should be in UTC format as seen above.
 
