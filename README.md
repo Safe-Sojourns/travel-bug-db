@@ -102,21 +102,21 @@ Endpoint to get all users information. Requires an email passed into url:
 Endpoint to get important trip info by trip id
 
 **/api/criticalseen** <br />
-Endpoint to PUT user email into critical seen list. requires JSON
-{
-  "_id": "critical message id",
-  "email": "email of user that saw the message"
-}
+Endpoint to PUT user email into critical seen list. requires JSON <br />
+{ <br />
+  "_id": "critical message id", <br />
+  "email": "email of user that saw the message" <br />
+} <br />
 
 **/api/postmessage** <br />
-Endpoint to POST user message. requires JSON
-{
-    "tripid": "1",
-    "message": "Hello Italy!",
-    "userEmail": "email",
-    "critical": "boolean",
-    "date": "2021-01-06T13:20:30Z"
-}
+Endpoint to POST user message. requires JSON <br />
+{ <br />
+    "tripid": "1", <br />
+    "message": "Hello Italy!", <br />
+    "userEmail": "email", <br />
+    "critical": "boolean", <br />
+    "date": "2021-01-06T13:20:30Z" <br />
+} <br />
 User that sends a critical message will be flagged as viewing the critical message. Date should be in UTC format as seen above.
 
 
