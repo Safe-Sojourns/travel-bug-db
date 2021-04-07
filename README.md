@@ -56,36 +56,36 @@ API should run on port [3001]
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-**/** -
+**/**  <br />
 Sends routes options
 
-**/logallevents** -
+**/logallevents** <br />
 Endpoint to log all Events
 
-**/logallusers** -
+**/logallusers** <br />
 Endpoint to log all users
 
-**/logalltrips** -
+**/logalltrips** <br />
 
-**/importmongodb** -
+**/importmongodb** <br />
 Endpoint to import entire dummy mongo data
 
-**/deletemongodb** -
+**/deletemongodb** <br />
 Endpoint to delete entire mongo database. Big red button
 
-**/api/events/:tripId/:date** -
+**/api/events/:tripId/:date** <br />
 Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 
-**/api/events** -
+**/api/events** <br />
 Endpoint to create event. Passed into body property.
 
-**/api/events/:event_id** -
+**/api/events/:event_id** <br />
 Enpoint to get all information about a specific event. Requires event if passed into url
 
-**/api/notes** -
+**/api/notes** <br />
 Endpoint to update a users notes. Requires users id and notes string passed into body
 
-**/api/users/:email** -
+**/api/users/:email** <br />
 Endpoint to get all users information. Requires an email passed into url:
 
 <!-- MARKDOWN LINKS & IMAGES -->
