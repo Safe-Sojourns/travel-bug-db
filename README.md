@@ -9,7 +9,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
+[![Contributors](https://img.shields.io/github/contributors/Safe-Sojourns/travel-bug-db)](https://github.com/Safe-Sojourns/travel-bug-db/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db)](https://github.com/Safe-Sojourns/travel-bug-db/issues)
 ![Mongoose][mongoose-shield]
 <!-- [![Forks][forks-shield]][forks-url]
