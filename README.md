@@ -10,8 +10,11 @@
 -->
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+![Mongoose][mongoose-shield]
+<!-- [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
+-->
+
 
 
 <!-- PROJECT LOGO -->
@@ -43,6 +46,7 @@ CSV HEADER;
 3. Run command in terminal to setup PostgreSQL database: psql postgres < ./db/schema.sql
 
 4. Start the server: npm start
+
 API should run on port [3001]
 
 5. Import the mongo database by connecting to the endpoint: http://localhost:3001/importmongodb
@@ -86,9 +90,12 @@ Endpoint to get all users information. Requires an email passed into url:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-2-blue
 [contributors-url]: https://github.com/Safe-Sojourns/travel-bug-db/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/Safe-Sojourns/travel-bug-db/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/Safe-Sojourns/travel-bug-db/stargazers
+[mongoose-shield]: https://img.shields.io/badge/mongoose-v5.12.3-blue
+[issues-shield]: https://img.shields.io/github/issues/Safe-Sojourns/travel-bug-db
+[issues-url]: https://github.com/Safe-Sojourns/travel-bug-db/issues
