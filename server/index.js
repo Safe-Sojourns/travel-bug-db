@@ -242,7 +242,27 @@ app.post('/api/postmessage', (req, res) => {
     console.log(error);
     res.status(400);
   });
-})
+});
+
+//  Endpoint to send back important information and staff information. Requires trip id
+app.get('/api/staffimortant', (req, res) => {
+  const { trip_id } = req.query;
+  const PDB_Query_Important = `SELECT * FROM trip_important_info WHERE trip_id = $1;`;
+  const PDB_Query_Staff = `SELECT * FROM users WHERE trip_id = $1 AND "admin" = true;`;
+  pdb.query(PDB_Query_Important, [trip_id])
+  .then(responseImportant => {
+    pdb.query(PDB_Query_Staff, [trip_id])
+    .then(responseStaff => {
+      res.send({important: responseImportant.rows, staff: responseStaff.rows})
+    })
+    .catch(() => res.status(500));
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500);
+    res.send('Error with database');
+  })
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
