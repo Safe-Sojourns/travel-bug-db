@@ -113,7 +113,7 @@ Endpoint to POST user message. requires JSON
 {
     "tripid": "1",
     "message": "Hello Italy!",
-    "userEmail": "fake@email.com",
+    "userEmail": "email",
     "critical": "boolean",
     "date": "2021-01-06T13:20:30Z"
 }
