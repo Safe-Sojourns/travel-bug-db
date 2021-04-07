@@ -207,22 +207,44 @@ app.get('/api/trips/:trip_id', (req, res) => {
 });
 
 //  Endpoint to update critical messsage. Requires critcal message id and user email
-app.put('/api/criticalseen/:email/:id', (req, res) => {
-  const { _id, email } = req.params;
-  mdb.mongoMessageData.update(
+app.put('/api/criticalseen', (req, res) => {
+  const { _id, email } = req.body;
+  mdb.criticalMessageModel.update(
     { _id: _id },
-    { $push: {seen_by_user_email, email}}
+    { $push: {seen_by_user_email: email}}
   )
   .then(() => res.send('Successfully Updated'))
   .catch((err) => {
     console.log(err);
-    res.status(204);
+    res.status(400);
     res.send('Error Updating');
   })
 });
 
-//  Endpoint to get all messages, identify critical messages, and send the id's of user who have seen them
-app.get('/api/')
+// Endpoint to POST a message.
+app.post('/api/postmessage', (req, res) => {
+  const { tripid, message, userEmail, critical, date } = req.body;
+  const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date) VALUES ($1, $2, $3, $4, $5) RETURNING id`
+  pdb.query(PDB_Query, [tripid, message, userEmail, critical, date])
+  .then(response => {
+    console.log('userEmail', userEmail);
+    if (critical === 'true') {
+      console.log('critcal if running')
+      mdb.criticalMessageModel.create({'trip_id': tripid, 'message_id': response.rows[0].id, 'seen_by_user_email': [userEmail]})
+      .then(response => res.send('Inserted into critical and normal message database'))
+      .catch((error) => {
+        console.log(error);
+        res.status(400);
+      });
+    } else {
+      res.send(('Inserted message into database'))
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+    res.status(400);
+  });
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

@@ -77,3 +77,4 @@ GRANT ALL ON TABLE users TO travelbug;
 GRANT ALL ON TABLE trips TO travelbug;
 GRANT ALL ON TABLE trip_important_info TO travelbug;
 GRANT ALL ON TABLE messages TO travelbug;
+GRANT USAGE, SELECT ON SEQUENCE messages_id_seq TO travelbug;
