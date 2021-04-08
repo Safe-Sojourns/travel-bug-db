@@ -70,14 +70,14 @@ Endpoint to log all Events
 **/logallusers** <br />
 Endpoint to log all users
 
-**/logallimportantinfo** <br />
-Endpoint to log all important info for all trips
+**/logallimportantinfo/:tripid** <br />
+Endpoint to log all important info for a trip id
 
 **/logalltrips** <br />
 Endpoint to log all trips
 
-**/logallmessages** <br />
-Endpoint to log all messages and critical status
+**/logallmessages/:tripid**
+Endpoint to log all messages and critical status by trip id
 
 **/importmongodb** <br />
 Endpoint to import entire dummy mongo data
@@ -94,6 +94,9 @@ Endpoint to create event. Passed into body property.
 **/api/events/:event_id** <br />
 Enpoint to get all information about a specific event. Requires event if passed into url
 
+**/api/eventstrip/:trip_id** <br />
+Enpoint to get all events by trip id
+
 **/api/notes** <br />
 Endpoint to update a users notes. Requires users id and notes string passed into body
 
@@ -103,16 +106,12 @@ Endpoint to get all users information. Requires an email passed into url:
 **/api/trips/:trip_id** <br />
 Endpoint to get important trip info by trip id
 
-**PUT**
-
 **/api/criticalseen** <br />
 Endpoint to PUT user email into critical seen list. requires JSON <br />
 { <br />
   "_id": "critical message id", <br />
   "email": "email of user that saw the message" <br />
 } <br />
-
-**POST**
 
 **/api/postmessage** <br />
 Endpoint to POST user message. requires JSON <br />
@@ -124,6 +123,18 @@ Endpoint to POST user message. requires JSON <br />
   "date": "2021-01-06T13:20:30Z" <br />
 } <br />
 User that sends a critical message will be flagged as viewing the critical message. Date should be in UTC format as seen above.
+
+**/api/staffimportant** <br />
+GET important trip information and admin users by trip id query
+USAGE: /api/staffimportant?trip_id=1
+
+**/api/createuser** <br />
+POST new user using JSON body:
+{
+  "email": "example@email.com",
+  "admin": "true",
+  "trip_id": "1"
+}
 
 
 
