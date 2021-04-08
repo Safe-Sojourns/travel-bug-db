@@ -249,7 +249,7 @@ app.post('/api/postmessage', (req, res) => {
 });
 
 //  Endpoint to send back important information and staff information. Requires trip id
-app.get('/api/staffimortant', (req, res) => {
+app.get('/api/staffimportant', (req, res) => {
   const { trip_id } = req.query;
   const PDB_Query_Important = `SELECT * FROM trip_important_info WHERE trip_id = $1;`;
   const PDB_Query_Staff = `SELECT * FROM users WHERE trip_id = $1 AND "admin" = true;`;
@@ -268,12 +268,13 @@ app.get('/api/staffimortant', (req, res) => {
   })
 });
 
+//  Endpoint to create a user. Requires trip_id and email
 app.post('/api/createuser', (req, res) => {
   const { email, admin, trip_id } = req.body;
   let PDB_Query = '';
   if (admin) {
     PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, $2, $3)`;
-    pdb.query(PDB_Query, [email, admin, 1])
+    pdb.query(PDB_Query, [email, admin, trip_id])
     .then(results => res.send(201))
     .catch(err => {
       console.log(err);
@@ -281,13 +282,40 @@ app.post('/api/createuser', (req, res) => {
     })
   } else {
     PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, FALSE, $2)`;
-    pdb.query(PDB_Query, [email, 1])
+    pdb.query(PDB_Query, [email, trip_id])
     .then(results => res.send(201))
     .catch(err => {
       console.log(err);
       res.send(500);
     })
   }
+});
+
+//  Endpoint to create an admin from a specific url. Requires email and trip_id
+app.get('/api/createadmin', (req, res) => {
+  const { email, trip_id } = req.query;
+  const PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, TRUE, $2)`;
+  pdb.query(PDB_Query, [email, trip_id])
+    .then(results => res.send(201))
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
+});
+
+//  Endpoint to create new trip and return the id of that trip. Requires a trip name.
+app.get('/api/createtrip', (req, res) => {
+  const { trip } = req.query;
+  console.log(req.query);
+  const PDB_Query = `INSERT INTO trips (name) VALUES ($1) RETURNING id`;
+  pdb.query(PDB_Query, [trip])
+    .then(results => {
+      res.send(`Trip id for ${trip} is ${results.rows[0].id}`)
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
 });
 
 app.listen(port, () => {
