@@ -8,19 +8,13 @@
     "photos": [
       "https://lh5.googleusercontent.com/p/AF1QipPH-TxgbJo1EW89vIhzZy2OD90jAl86tU0d_Dd1=w408-h306-k-no"
     ],
-    "start_time": "2021/04/12 09:00",
-    "end_time": "2021/04/12 10:00",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "start_date": "2021/04/12",
     "description": "Morning orientation with AIFS staff and your faculty covering all aspects of the program, life in Italy and safety and security.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 12",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -31,19 +25,13 @@
     "photos": [
       "https://lh5.googleusercontent.com/p/AF1QipPV7dB2OsTHyLMRK5LMkw3Nkx5TUcHMQJ74D2ha=w428-h240-k-no"
     ],
-    "start_time": "2021/04/12 10:00",
-    "end_time": "2021/04/12 12:00",
+    "start_time": "10:00",
+    "end_time": "12:00",
+    "start_date": "2021/04/12",
     "description": "Afternoon walking tour of Florence’s historical center including iconic sites such as the Ponte Vecchio, Piazza della Signoria, Florence Cathedral, and the Basilica of Santa Croce.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 12",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -54,19 +42,13 @@
     "photos": [
       "https://lh5.googleusercontent.com/p/AF1QipO2bNWk4UtgKZlW7nhovrerXAVUrCDnBT7tRPGv=w408-h271-k-no"
     ],
-    "start_time": "2021/04/12 19:00",
-    "end_time": "2021/04/12 20:00",
+    "start_time": "19:00",
+    "end_time": "20:00",
+    "start_date": "2021/04/13",
     "description": "McDonald's Roma Pio XI",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -79,19 +61,13 @@
       "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
       "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy.jpg"
     ],
-    "start_time": "2021/04/13 10:00",
-    "end_time": "2021/04/13 11:00",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "start_date": "2021/04/13",
     "description": "The Colosseum was built as part of an imperial effort to revitalize Rome after the tumultuous year of the four emperors, 69 CE. As with other amphitheatres, the emperor Vespasian intended the Colosseum to be an entertainment venue, hosting gladiator fights, animal hunts, and even mock naval battles.",
     "cost": "10",
     "transportation": "bus",
-    "mandatory": "false",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "false"
   },
   {
     "trip_id": "1",
@@ -104,19 +80,13 @@
       "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
       "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy.jpg"
     ],
-    "start_time": "2021/04/13 14:00",
-    "end_time": "2021/04/13 15:00",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "start_date": "2021/04/14",
     "description": "Pantheon. Iconic temple built circa 118 to 125 A.D. with a  dome & Renaissance tombs, including Raphael's.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
 
   {
@@ -130,19 +100,13 @@
       "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
       "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy.jpg"
     ],
-    "start_time": "2021/04/13 16:00",
-    "end_time": "2021/04/13 17:30",
+    "start_time": "16:00",
+    "end_time": "17:30",
+    "start_date": "2021/04/14",
     "description": "Vatican Museums. Multiple galleries of classical & Renaissance art masterpieces, plus the Sistine Chapel frescoes.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -155,19 +119,13 @@
       "https://cms.lonelyplanet.com/sites/default/files/brightcove/videos/images/posters/5104226627001_5764567048001_5764070723001-vs.jpg",
       "https://i.natgeofe.com/n/3012ffcc-7361-45f6-98b3-a36d4153f660/colosseum-daylight-rome-italy.jpg"
     ],
-    "start_time": "2021/04/14 10:00",
-    "end_time": "2021/04/14 14:00",
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "start_date": "2021/04/15",
     "description": "Morning class (1) in the AIFS Study Center, which is located within a 14th century palazzo in the Santa Croce district of Florence's historic city center.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -178,19 +136,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOiIHyOVLiBJJ0R_VtAI_BFj60FMEVfD896LGne=w408-h306-k-no"
     ],
-    "start_time": "2021/04/14 14:00",
-    "end_time": "2021/04/14 15:00",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "start_date": "2021/04/15",
     "description": "Afternoon visit to Florence's Cathedral and Brunelleschi's famous Dome.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
 
   {
@@ -202,19 +154,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipPlqeP6p1_1kvi82PKnfTAF6Zbe4Sx8m2Zv5NUw=w426-h240-k-no"
     ],
-    "start_time": "2021/04/14 16:00",
-    "end_time": "2021/04/14 17:30",
+    "start_time": "16:00",
+    "end_time": "17:30",
+    "start_date": "2021/04/16",
     "description": "Beautiful place to walk in and breath some fresh air.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -225,19 +171,13 @@
     "photos": [
                 ""
     ],
-    "start_time": "2021/04/15 10:00",
-    "end_time": "2021/04/15 14:00",
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "start_date": "2021/04/16",
     "description": "Morning class (2) in the AIFS Study Center, which is located within a 14th century palazzo in the Santa Croce district of Florence's historic city center.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -248,19 +188,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOiIHyOVLiBJJ0R_VtAI_BFj60FMEVfD896LGne=w408-h306-k-no"
     ],
-    "start_time": "2021/04/15 14:00",
-    "end_time": "2021/04/15 15:00",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "start_date": "2021/04/17",
     "description": "Intimate, flamboyant 17th-century church housing Bernini's dramatic carving The Ecstasy of Teresa.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
 
   {
@@ -272,19 +206,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipNd6VV_jydURapuQhYYH2DNyySkFhYEZhIB25Y=w408-h306-k-no"
     ],
-    "start_time": "2021/04/15 16:00",
-    "end_time": "2021/04/15 17:30",
+    "start_time": "16:00",
+    "end_time": "17:30",
+    "start_date": "2021/04/17",
     "description": "Afternoon visit to the Uffizi Gallery, one of the largest and most visited of all Italian museums, featuring a rich artwork collection from the Italian Renaissance.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -295,19 +223,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipOt_Dj7INFpFZb7pHeeUcy0GjcMIHde9bdjZcbP=w408-h306-k-no"
     ],
-    "start_time": "2021/04/16 10:00",
-    "end_time": "2021/04/16 14:00",
+    "start_time": "10:00",
+    "end_time": "14:00",
+    "start_date": "2021/04/18",
     "description": "Morning class (3) in the AIFS Study Center, which is located within a 14th century palazzo in the Santa Croce district of Florence's historic city center.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
@@ -318,19 +240,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipMEjuh68Jor8lzCGb3JFfRTV2AClxL9CePxyS-f=w408-h544-k-no"
     ],
-    "start_time": "2021/04/16 14:00",
-    "end_time": "2021/04/16 15:00",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "start_date": "2021/04/18",
     "description": "Historic Ardeatino extends along Via Appia Antica, a well-preserved Roman road where frescoes are found in the Catacombs of St. Callixtus and there's an underground church at the Catacombs of Domitilla. Mausoleo delle Fosse Ardeatine honors victims of a WWII Nazi massacre, and its Memorabilia Museum is dedicated to the Italian Resistance movement. Homemade beer and honey is sold at medieval Three Fountains Abbey.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
 
   {
@@ -342,19 +258,13 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipNd6VV_jydURapuQhYYH2DNyySkFhYEZhIB25Y=w408-h306-k-no"
     ],
-    "start_time": "2021/04/16 16:00",
-    "end_time": "2021/04/16 17:30",
+    "start_time": "16:00",
+    "end_time": "17:30",
+    "start_date": "2021/04/19",
     "description": "Futuristic concert complex with 3 pod-like auditoriums for arts events, plus an archeology museum.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   },
   {
     "trip_id": "2",
@@ -365,18 +275,12 @@
     "photos": [
                 "https://lh5.googleusercontent.com/p/AF1QipNd6VV_jydURapuQhYYH2DNyySkFhYEZhIB25Y=w408-h306-k-no"
     ],
-    "start_time": "2021/04/16 16:00",
-    "end_time": "2021/04/16 17:30",
+    "start_time": "16:00",
+    "end_time": "17:30",
+    "start_date": "2021/04/19",
     "description": "Futuristic concert complex with 3 pod-like auditoriums for arts events, plus an archeology museum.",
     "cost": "0",
     "transportation": "bus",
-    "mandatory": "true",
-    "important_info": {
-      "embassy_phone": "123456789",
-      "embassy_location": "45, 11",
-      "popo_phone": "54321",
-      "popo_location": "43, 12",
-      "hospital_location": "43, 8"
-    }
+    "mandatory": "true"
   }
 ]

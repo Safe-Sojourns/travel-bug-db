@@ -35,9 +35,11 @@ app.get('/logallusers', (req, res) => {
   .catch(error => console.log(error));
 });
 
-//  Endpoint to log all important info
-app.get('/logallimportantinfo', (req, res) => {
-  pdb.query('SELECT * FROM trip_important_info')
+//  Endpoint to log all important info by trip id
+app.get('/logallimportantinfo/:tripid', (req, res) => {
+  const PDB_Query = `SELECT * FROM trip_important_info WHERE trip_id = $1`
+  const { tripid } = req.params;
+  pdb.query(PDB_Query, [tripid])
   .then(response => res.send(response.rows))
   .catch(error => console.log(error));
 });
@@ -49,9 +51,11 @@ app.get('/logalltrips', (req, res) => {
   .catch(error => console.log(error));
 });
 
-// Endpoint to log all messages
-app.get('/logallmessages', (req, res) => {
-  pdb.query('SELECT * FROM messages')
+// Endpoint to log all messages by trip id
+app.get('/logallmessages/:tripid', (req, res) => {
+  const PDB_Query = `SELECT * FROM messages WHERE trip_id =$1`
+  const { tripid }= req.params;
+  pdb.query(PDB_Query, [tripid])
   .then(messages => {
     mdb.criticalMessageModel.find({})
     .then(criticalInfo => res.send({"messages": messages.rows, "criticalInfo": criticalInfo}))
@@ -152,7 +156,7 @@ app.get('/api/events/:event_id', (req, res) => {
     res.status(500);
     res.send('No event exists with that id');
   })
-})
+});
 
 //  Enpoint to get all information about a specific event. Requires event if passed into url
 app.get('/api/eventstrip/:trip_id', (req, res) => {
