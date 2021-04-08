@@ -24,17 +24,7 @@ const eventSchema = new mongoose.Schema(
     "end_date": String,
     "cost": Number,
     "transportation": String,
-    "mandatory": Boolean,
-    "important_info": {
-      "embassy_phone": Number,
-      "embassy_location_latitude": Number,
-      "embassy_location_longitude": Number,
-      "popo_phone": Number,
-      "popo_location_latitude": Number,
-      "popo_location_longitude": Number,
-      "hospital_location_latitude": Number,
-      "hospital_location_longitude": Number,
-    }
+    "mandatory": Boolean
   }
 );
 

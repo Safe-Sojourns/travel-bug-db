@@ -35,9 +35,11 @@ app.get('/logallusers', (req, res) => {
   .catch(error => console.log(error));
 });
 
-//  Endpoint to log all important info
-app.get('/logallimportantinfo', (req, res) => {
-  pdb.query('SELECT * FROM trip_important_info')
+//  Endpoint to log all important info by trip id
+app.get('/logallimportantinfo/:tripid', (req, res) => {
+  const PDB_Query = `SELECT * FROM trip_important_info WHERE trip_id = $1`
+  const { tripid } = req.params;
+  pdb.query(PDB_Query, [tripid])
   .then(response => res.send(response.rows))
   .catch(error => console.log(error));
 });
@@ -49,9 +51,11 @@ app.get('/logalltrips', (req, res) => {
   .catch(error => console.log(error));
 });
 
-// Endpoint to log all messages
-app.get('/logallmessages', (req, res) => {
-  pdb.query('SELECT * FROM messages')
+// Endpoint to log all messages by trip id
+app.get('/logallmessages/:tripid', (req, res) => {
+  const PDB_Query = `SELECT * FROM messages WHERE trip_id =$1`
+  const { tripid }= req.params;
+  pdb.query(PDB_Query, [tripid])
   .then(messages => {
     mdb.criticalMessageModel.find({})
     .then(criticalInfo => res.send({"messages": messages.rows, "criticalInfo": criticalInfo}))
@@ -90,7 +94,7 @@ app.get('/deletemongodb', (req, res) => {
 //  Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
-  const MDB_Query = { trip_id: tripId, start_time: { $regex: `${date}`}}
+  const MDB_Query = { trip_id: tripId, start_date: { $regex: `${date}`}}
   mdb.eventModel.find(MDB_Query).exec()
   .then((events) => res.send(events))
   .catch((error) => {
@@ -102,8 +106,8 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 //  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
   const MDB_Query = {
-    "trip_id": req.body.trip_id,
-    "event_name": req.body.event_name,
+    "trip_id": req.body.tripid,
+    "event_name": req.body.title,
     "location": req.body.location,
     "latitude": req.body.latitude,
     "longitude": req.body.longitude,
@@ -115,17 +119,7 @@ app.post('/api/events', (req, res) => {
     "end_date": req.body.end_date,
     "cost": req.body.cost,
     "transportation": req.body.transportation,
-    "mandatory": req.body.mandatory,
-    "important_info": {
-      "embassy_phone": req.body.embassy_phone,
-      "embassy_location_latitude": req.body.embassy_location_latitude,
-      "embassy_location_longitude": req.body.embassy_location_longitude,
-      "popo_phone": req.body.popo_phone,
-      "popo_location_latitude": req.body.popo_location_latitude,
-      "popo_location_longitude": req.body.popo_location_longitude,
-      "hospital_location_latitude": req.body.hospital_location_latitude,
-      "hospital_location_longitude": req.body.hospital_location_longitude,
-    }
+    "mandatory": req.body.mandatory
   };
   mdb.eventModel.create(MDB_Query)
   .then(() => {
@@ -144,7 +138,21 @@ app.get('/api/events/:event_id', (req, res) => {
   const MDB_Query = `${event_id}`
   mdb.eventModel.findById(MDB_Query)
   .then((response) => {
-    console.log(response);
+    res.send(response);
+  })
+  .catch((error) => {
+    console.log(error);
+    res.status(500);
+    res.send('No event exists with that id');
+  })
+});
+
+//  Enpoint to get all information about a specific event. Requires event if passed into url
+app.get('/api/eventstrip/:trip_id', (req, res) => {
+  const { trip_id } = req.params;
+  const MDB_Query = {trip_id: trip_id}
+  mdb.eventModel.find(MDB_Query)
+  .then((response) => {
     res.send(response);
   })
   .catch((error) => {
@@ -158,7 +166,6 @@ app.get('/api/events/:event_id', (req, res) => {
 app.post('/api/notes', (req, res) => {
   const { id, notes } = req.body;
   const PDB_Query = `UPDATE users SET notes = $1 WHERE id = $2`;
-  console.log('testing postgres');
   pdb.query(PDB_Query, [notes, id])
   .then(response => {
     res.status(201);
@@ -190,7 +197,6 @@ app.get('/api/users/:email', (req, res) => {
 //  Endpoint to get all trip important information. Requires trip id passed into url
 app.get('/api/trips/:trip_id', (req, res) => {
   const { trip_id } = req.params;
-  console.log(trip_id);
   const PDB_Query = `SELECT * FROM trip_important_info WHERE trip_id = $1`;
 
   pdb.query(PDB_Query, [trip_id])
@@ -225,9 +231,7 @@ app.post('/api/postmessage', (req, res) => {
   const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date) VALUES ($1, $2, $3, $4, $5) RETURNING id`
   pdb.query(PDB_Query, [tripid, message, userEmail, critical, date])
   .then(response => {
-    console.log('userEmail', userEmail);
     if (critical === 'true') {
-      console.log('critcal if running')
       mdb.criticalMessageModel.create({'trip_id': tripid, 'message_id': response.rows[0].id, 'seen_by_user_email': [userEmail]})
       .then(response => res.send('Inserted into critical and normal message database'))
       .catch((error) => {
@@ -242,7 +246,27 @@ app.post('/api/postmessage', (req, res) => {
     console.log(error);
     res.status(400);
   });
-})
+});
+
+//  Endpoint to send back important information and staff information. Requires trip id
+app.get('/api/staffimortant', (req, res) => {
+  const { trip_id } = req.query;
+  const PDB_Query_Important = `SELECT * FROM trip_important_info WHERE trip_id = $1;`;
+  const PDB_Query_Staff = `SELECT * FROM users WHERE trip_id = $1 AND "admin" = true;`;
+  pdb.query(PDB_Query_Important, [trip_id])
+  .then(responseImportant => {
+    pdb.query(PDB_Query_Staff, [trip_id])
+    .then(responseStaff => {
+      res.send({important: responseImportant.rows, staff: responseStaff.rows})
+    })
+    .catch(() => res.status(500));
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500);
+    res.send('Error with database');
+  })
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
