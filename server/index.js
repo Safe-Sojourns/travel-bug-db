@@ -96,7 +96,9 @@ app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
   const MDB_Query = { trip_id: tripId, start_date: { $regex: `${date}`}}
   mdb.eventModel.find(MDB_Query).exec()
-  .then((events) => res.send(events))
+  .then((events) => {
+    res.send(events)
+  })
   .catch((error) => {
     console.log(error);
     res.sendStatus(400);

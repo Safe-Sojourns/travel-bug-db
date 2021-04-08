@@ -18,6 +18,40 @@
   },
   {
     "trip_id": "1",
+    "event_name": "Basilica Santi Giovanni e Paolo",
+    "location": "Piazza Dei SS. Giovanni e Paolo, 00184 Roma RM, Italy",
+    "latitude": "41.88704581663531",
+    "longitude": "12.492301275004227",
+    "photos": [
+      "https://lh5.googleusercontent.com/p/AF1QipPTCW2YISwpOsX1A1Nb06WqtzrsglEcLBFiWElD=w426-h240-k-no"
+    ],
+    "start_time": "11:00",
+    "end_time": "12:00",
+    "start_date": "2021-04-09",
+    "description": "Ancient hilltop basilica, dating from the 4th century, built atop a network of ornate Roman rooms.",
+    "cost": "0",
+    "transportation": "bus",
+    "mandatory": "true"
+  },
+  {
+    "trip_id": "1",
+    "event_name": "Lunch @ Pasta Imperiale",
+    "location": "Via del Boschetto, 112, 00184 Roma RM, Italy",
+    "latitude": "41.89616970267871",
+    "longitude": "12.491176611389877",
+    "photos": [
+      "https://lh5.googleusercontent.com/p/AF1QipNZ02XcDqOYQGvcfXLohWaK6tcYN4oJK2awNUxw=w408-h306-k-no"
+    ],
+    "start_time": "13:00",
+    "end_time": "14:00",
+    "start_date": "2021-04-09",
+    "description": "Best pasta in Rome, enough said!",
+    "cost": "0",
+    "transportation": "bus",
+    "mandatory": "true"
+  },
+  {
+    "trip_id": "1",
     "event_name": "Afternoon walking tour",
     "location": "Piazza di S. Pancrazio, 9, 00152 Roma RM, Italy",
     "latitude": "41.88555686126655",
@@ -25,8 +59,8 @@
     "photos": [
       "https://lh5.googleusercontent.com/p/AF1QipPV7dB2OsTHyLMRK5LMkw3Nkx5TUcHMQJ74D2ha=w428-h240-k-no"
     ],
-    "start_time": "10:00",
-    "end_time": "12:00",
+    "start_time": "15:00",
+    "end_time": "17:00",
     "start_date": "2021-04-09",
     "description": "Afternoon walking tour of Florence’s historical center including iconic sites such as the Ponte Vecchio, Piazza della Signoria, Florence Cathedral, and the Basilica of Santa Croce.",
     "cost": "0",
@@ -44,7 +78,7 @@
     ],
     "start_time": "19:00",
     "end_time": "20:00",
-    "start_date": "2021-04-10",
+    "start_date": "2021-04-09",
     "description": "McDonald's Roma Pio XI",
     "cost": "0",
     "transportation": "bus",
@@ -68,6 +102,23 @@
     "cost": "10",
     "transportation": "bus",
     "mandatory": "false"
+  },
+  {
+    "trip_id": "1",
+    "event_name": "Evening group welcome meal",
+    "location": "Via del Fiume, 00186 Roma RM, Italy",
+    "latitude": "41.90779120513614",
+    "longitude": "12.475337914617127",
+    "photos": [
+      "https://lh5.googleusercontent.com/p/AF1QipO2bNWk4UtgKZlW7nhovrerXAVUrCDnBT7tRPGv=w408-h271-k-no"
+    ],
+    "start_time": "19:00",
+    "end_time": "20:00",
+    "start_date": "2021-04-10",
+    "description": "McDonald's Roma Pio XI",
+    "cost": "0",
+    "transportation": "bus",
+    "mandatory": "true"
   },
   {
     "trip_id": "1",
