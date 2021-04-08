@@ -269,14 +269,25 @@ app.get('/api/staffimortant', (req, res) => {
 });
 
 app.post('/api/createuser', (req, res) => {
-  const { email, admin } = req.body;
-  const PDB_Query = `INSERT INTO users (email, admin) VALUES ($1, $2)`
-  pdb.query(PDB_Query, [email, admin])
-  .then(results => console.log(results.rows))
-  .catch(err => {
-    console.log(err);
-    res.send(500);
-  })
+  const { email, admin, trip_id } = req.body;
+  let PDB_Query = '';
+  if (admin) {
+    PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, $2, $3)`;
+    pdb.query(PDB_Query, [email, admin, 1])
+    .then(results => res.send(201))
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
+  } else {
+    PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, FALSE, $2)`;
+    pdb.query(PDB_Query, [email, 1])
+    .then(results => res.send(201))
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
+  }
 });
 
 app.listen(port, () => {
