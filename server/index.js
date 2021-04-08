@@ -291,11 +291,11 @@ app.post('/api/createuser', (req, res) => {
   }
 });
 
-//  Endpoint to create an admin from a specific url. Requires email and trip_id
+//  Endpoint to create an admin from a specific url. Requires email, trip_id, and number
 app.get('/api/createadmin', (req, res) => {
-  const { email, trip_id } = req.query;
-  const PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, TRUE, $2)`;
-  pdb.query(PDB_Query, [email, trip_id])
+  const { email, trip_id, number } = req.query;
+  const PDB_Query = `INSERT INTO users (email, admin, trip_id, number) VALUES ($1, TRUE, $2, $3)`;
+  pdb.query(PDB_Query, [email, trip_id, number])
     .then(results => res.send(201))
     .catch(err => {
       console.log(err);
