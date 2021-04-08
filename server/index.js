@@ -249,7 +249,7 @@ app.post('/api/postmessage', (req, res) => {
 });
 
 //  Endpoint to send back important information and staff information. Requires trip id
-app.get('/api/staffimortant', (req, res) => {
+app.get('/api/staffimportant', (req, res) => {
   const { trip_id } = req.query;
   const PDB_Query_Important = `SELECT * FROM trip_important_info WHERE trip_id = $1;`;
   const PDB_Query_Staff = `SELECT * FROM users WHERE trip_id = $1 AND "admin" = true;`;
