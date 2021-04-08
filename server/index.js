@@ -94,7 +94,8 @@ app.get('/deletemongodb', (req, res) => {
 //  Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
-  const MDB_Query = { trip_id: tripId, start_time: { $regex: `${date}`}}
+  console.log(date);
+  const MDB_Query = { trip_id: tripId, start_date: { $regex: `${date}`}}
   mdb.eventModel.find(MDB_Query).exec()
   .then((events) => res.send(events))
   .catch((error) => {
