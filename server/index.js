@@ -239,7 +239,7 @@ app.post('/api/postmessage', (req, res) => {
   const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date) VALUES ($1, $2, $3, $4, $5) RETURNING id`
   pdb.query(PDB_Query, [tripid, message, userEmail, critical, date])
   .then(response => {
-    if (critical === 'true') {
+    if (critical === true) {
       mdb.criticalMessageModel.create({'trip_id': tripid, 'message_id': response.rows[0].id, 'seen_by_user_email': [userEmail]})
       .then(response => res.send('Inserted into critical and normal message database'))
       .catch((error) => {
