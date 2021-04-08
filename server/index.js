@@ -119,17 +119,7 @@ app.post('/api/events', (req, res) => {
     "end_date": req.body.end_date,
     "cost": req.body.cost,
     "transportation": req.body.transportation,
-    "mandatory": req.body.mandatory,
-    "important_info": {
-      "embassy_phone": req.body.embassy_phone,
-      "embassy_location_latitude": req.body.embassy_location_latitude,
-      "embassy_location_longitude": req.body.embassy_location_longitude,
-      "popo_phone": req.body.popo_phone,
-      "popo_location_latitude": req.body.popo_location_latitude,
-      "popo_location_longitude": req.body.popo_location_longitude,
-      "hospital_location_latitude": req.body.hospital_location_latitude,
-      "hospital_location_longitude": req.body.hospital_location_longitude,
-    }
+    "mandatory": req.body.mandatory
   };
   mdb.eventModel.create(MDB_Query)
   .then(() => {
