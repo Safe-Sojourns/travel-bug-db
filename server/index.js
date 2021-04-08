@@ -44,6 +44,14 @@ app.get('/logallimportantinfo/:tripid', (req, res) => {
   .catch(error => console.log(error));
 });
 
+//  Endpoint to log all important info
+app.get('/logallimportantinfo', (req, res) => {
+  const PDB_Query = `SELECT * FROM trip_important_info`
+  pdb.query(PDB_Query)
+  .then(response => res.send(response.rows))
+  .catch(error => console.log(error));
+});
+
 //  Endpoint to log all trips
 app.get('/logalltrips', (req, res) => {
   pdb.query('SELECT * FROM trips')
