@@ -268,6 +268,17 @@ app.get('/api/staffimortant', (req, res) => {
   })
 });
 
+app.post('/api/createuser', (req, res) => {
+  const { email, admin } = req.body;
+  const PDB_Query = `INSERT INTO users (email, admin) VALUES ($1, $2)`
+  pdb.query(PDB_Query, [email, admin])
+  .then(results => console.log(results.rows))
+  .catch(err => {
+    console.log(err);
+    res.send(500);
+  })
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
