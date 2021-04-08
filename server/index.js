@@ -94,7 +94,6 @@ app.get('/deletemongodb', (req, res) => {
 //  Engpoint to get all events on a specific trip and date. Requires trip id and date passed into url. DATE MUST BE IN YEAR-MONTH-DAY (0000-00-00)
 app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
-  console.log(date);
   const MDB_Query = { trip_id: tripId, start_date: { $regex: `${date}`}}
   mdb.eventModel.find(MDB_Query).exec()
   .then((events) => res.send(events))
@@ -139,7 +138,6 @@ app.get('/api/events/:event_id', (req, res) => {
   const MDB_Query = `${event_id}`
   mdb.eventModel.findById(MDB_Query)
   .then((response) => {
-    console.log(response);
     res.send(response);
   })
   .catch((error) => {
@@ -155,7 +153,6 @@ app.get('/api/eventstrip/:trip_id', (req, res) => {
   const MDB_Query = {trip_id: trip_id}
   mdb.eventModel.find(MDB_Query)
   .then((response) => {
-    console.log(response);
     res.send(response);
   })
   .catch((error) => {
@@ -169,7 +166,6 @@ app.get('/api/eventstrip/:trip_id', (req, res) => {
 app.post('/api/notes', (req, res) => {
   const { id, notes } = req.body;
   const PDB_Query = `UPDATE users SET notes = $1 WHERE id = $2`;
-  console.log('testing postgres');
   pdb.query(PDB_Query, [notes, id])
   .then(response => {
     res.status(201);
@@ -201,7 +197,6 @@ app.get('/api/users/:email', (req, res) => {
 //  Endpoint to get all trip important information. Requires trip id passed into url
 app.get('/api/trips/:trip_id', (req, res) => {
   const { trip_id } = req.params;
-  console.log(trip_id);
   const PDB_Query = `SELECT * FROM trip_important_info WHERE trip_id = $1`;
 
   pdb.query(PDB_Query, [trip_id])
@@ -236,9 +231,7 @@ app.post('/api/postmessage', (req, res) => {
   const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date) VALUES ($1, $2, $3, $4, $5) RETURNING id`
   pdb.query(PDB_Query, [tripid, message, userEmail, critical, date])
   .then(response => {
-    console.log('userEmail', userEmail);
     if (critical === 'true') {
-      console.log('critcal if running')
       mdb.criticalMessageModel.create({'trip_id': tripid, 'message_id': response.rows[0].id, 'seen_by_user_email': [userEmail]})
       .then(response => res.send('Inserted into critical and normal message database'))
       .catch((error) => {
