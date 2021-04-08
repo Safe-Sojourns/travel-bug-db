@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS travelbug_db;
+
 CREATE DATABASE travelbug_db;
 
 CREATE USER travelbug WITH PASSWORD 'travelbug';
