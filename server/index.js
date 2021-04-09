@@ -104,7 +104,9 @@ app.get('/api/events/:tripId/:date', (req, res) => {
   const { tripId, date } = req.params;
   const MDB_Query = { trip_id: tripId, start_date: { $regex: `${date}`}}
   mdb.eventModel.find(MDB_Query).exec()
-  .then((events) => res.send(events))
+  .then((events) => {
+    res.send(events)
+  })
   .catch((error) => {
     console.log(error);
     res.sendStatus(400);
@@ -119,7 +121,8 @@ app.post('/api/events', (req, res) => {
     "location": req.body.location,
     "latitude": req.body.latitude,
     "longitude": req.body.longitude,
-    "photos": req.body.photos,
+    // "photos": req.body.photos,
+    "photos": "https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80", //stock photo for now
     "start_time": req.body.start_time,
     "end_time": req.body.end_time,
     "description": req.body.description,
@@ -221,16 +224,23 @@ app.get('/api/trips/:trip_id', (req, res) => {
 //  Endpoint to update critical messsage. Requires critcal message id and user email
 app.put('/api/criticalseen', (req, res) => {
   const { _id, email } = req.body;
-  mdb.criticalMessageModel.update(
-    { _id: _id },
-    { $push: {seen_by_user_email: email}}
-  )
-  .then(() => res.send('Successfully Updated'))
-  .catch((err) => {
-    console.log(err);
-    res.status(400);
-    res.send('Error Updating');
-  })
+  mdb.criticalMessageModel.find({ _id: _id, seen_by_user_email: email})
+  .then((results) => {
+    if (results.length === 0) {
+      mdb.criticalMessageModel.update(
+        { _id: _id },
+        { $push: {seen_by_user_email: email}}
+      )
+      .then(() => res.send('Successfully Updated'))
+      .catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.send('Error Updating');
+      })
+    } else {
+      res.send('This email is already on the seen list');
+    }
+    })
 });
 
 // Endpoint to POST a message.
