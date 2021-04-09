@@ -223,16 +223,23 @@ app.get('/api/trips/:trip_id', (req, res) => {
 //  Endpoint to update critical messsage. Requires critcal message id and user email
 app.put('/api/criticalseen', (req, res) => {
   const { _id, email } = req.body;
-  mdb.criticalMessageModel.update(
-    { _id: _id },
-    { $push: {seen_by_user_email: email}}
-  )
-  .then(() => res.send('Successfully Updated'))
-  .catch((err) => {
-    console.log(err);
-    res.status(400);
-    res.send('Error Updating');
-  })
+  mdb.criticalMessageModel.find({ _id: _id, seen_by_user_email: email})
+  .then((results) => {
+    if (results.length === 0) {
+      mdb.criticalMessageModel.update(
+        { _id: _id },
+        { $push: {seen_by_user_email: email}}
+      )
+      .then(() => res.send('Successfully Updated'))
+      .catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.send('Error Updating');
+      })
+    } else {
+      res.send('This email is already on the seen list');
+    }
+    })
 });
 
 // Endpoint to POST a message.
