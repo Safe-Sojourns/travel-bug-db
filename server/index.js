@@ -121,7 +121,8 @@ app.post('/api/events', (req, res) => {
     "location": req.body.location,
     "latitude": req.body.latitude,
     "longitude": req.body.longitude,
-    "photos": req.body.photos,
+    // "photos": req.body.photos,
+    "photos": "https://unsplash.com/photos/iUBgeNeyVy8", //stock photo for now
     "start_time": req.body.start_time,
     "end_time": req.body.end_time,
     "description": req.body.description,
