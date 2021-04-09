@@ -118,7 +118,7 @@ app.post('/api/events', (req, res) => {
   console.log(req.body);
   const MDB_Query = {
     "trip_id": req.body.trip_id,
-    "event_name": req.body.title,
+    "event_name": req.body.event_name,
     "location": req.body.location,
     "latitude": req.body.latitude,
     "longitude": req.body.longitude,
