@@ -115,7 +115,6 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 
 //  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
-  console.log(req.body);
   const MDB_Query = {
     "trip_id": req.body.trip_id,
     "event_name": req.body.event_name,
