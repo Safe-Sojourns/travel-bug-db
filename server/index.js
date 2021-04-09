@@ -235,9 +235,9 @@ app.put('/api/criticalseen', (req, res) => {
 
 // Endpoint to POST a message.
 app.post('/api/postmessage', (req, res) => {
-  const { tripid, message, userEmail, critical, date } = req.body;
-  const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date) VALUES ($1, $2, $3, $4, $5) RETURNING id`
-  pdb.query(PDB_Query, [tripid, message, userEmail, critical, date])
+  const { tripid, message, userEmail, critical, date, photo } = req.body;
+  const PDB_Query = `INSERT INTO messages(trip_id, message, user_email, critical, date, photo) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`
+  pdb.query(PDB_Query, [tripid, message, userEmail, critical, date, photo])
   .then(response => {
     if (critical === true) {
       mdb.criticalMessageModel.create({'trip_id': tripid, 'message_id': response.rows[0].id, 'seen_by_user_email': [userEmail]})

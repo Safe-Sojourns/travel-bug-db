@@ -54,6 +54,7 @@ CREATE TABLE messages (
   user_email VARCHAR(100),
   critical BOOLEAN,
   "date" VARCHAR(100),
+  photo TEXT,
   FOREIGN KEY (trip_id) REFERENCES trips(id),
   FOREIGN KEY (user_email) REFERENCES users(email)
 );
