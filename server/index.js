@@ -44,6 +44,14 @@ app.get('/logallimportantinfo/:tripid', (req, res) => {
   .catch(error => console.log(error));
 });
 
+//  Endpoint to log all important info
+app.get('/logallimportantinfo', (req, res) => {
+  const PDB_Query = `SELECT * FROM trip_important_info`
+  pdb.query(PDB_Query)
+  .then(response => res.send(response.rows))
+  .catch(error => console.log(error));
+});
+
 //  Endpoint to log all trips
 app.get('/logalltrips', (req, res) => {
   pdb.query('SELECT * FROM trips')
@@ -105,8 +113,9 @@ app.get('/api/events/:tripId/:date', (req, res) => {
 
 //  Endpoint to create event. Passed into body property.
 app.post('/api/events', (req, res) => {
+  console.log(req.body);
   const MDB_Query = {
-    "trip_id": req.body.tripid,
+    "trip_id": req.body.trip_id,
     "event_name": req.body.title,
     "location": req.body.location,
     "latitude": req.body.latitude,
@@ -268,12 +277,13 @@ app.get('/api/staffimportant', (req, res) => {
   })
 });
 
+//  Endpoint to create a user. Requires trip_id and email
 app.post('/api/createuser', (req, res) => {
   const { email, admin, trip_id } = req.body;
   let PDB_Query = '';
   if (admin) {
     PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, $2, $3)`;
-    pdb.query(PDB_Query, [email, admin, 1])
+    pdb.query(PDB_Query, [email, admin, trip_id])
     .then(results => res.send(201))
     .catch(err => {
       console.log(err);
@@ -281,13 +291,40 @@ app.post('/api/createuser', (req, res) => {
     })
   } else {
     PDB_Query = `INSERT INTO users (email, admin, trip_id) VALUES ($1, FALSE, $2)`;
-    pdb.query(PDB_Query, [email, 1])
+    pdb.query(PDB_Query, [email, trip_id])
     .then(results => res.send(201))
     .catch(err => {
       console.log(err);
       res.send(500);
     })
   }
+});
+
+//  Endpoint to create an admin from a specific url. Requires email, trip_id, and number
+app.get('/api/createadmin', (req, res) => {
+  const { email, trip_id, number } = req.query;
+  const PDB_Query = `INSERT INTO users (email, admin, trip_id, number) VALUES ($1, TRUE, $2, $3)`;
+  pdb.query(PDB_Query, [email, trip_id, number])
+    .then(results => res.send(201))
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
+});
+
+//  Endpoint to create new trip and return the id of that trip. Requires a trip name.
+app.get('/api/createtrip', (req, res) => {
+  const { trip } = req.query;
+  console.log(req.query);
+  const PDB_Query = `INSERT INTO trips (name) VALUES ($1) RETURNING id`;
+  pdb.query(PDB_Query, [trip])
+    .then(results => {
+      res.send(`Trip id for ${trip} is ${results.rows[0].id}`)
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(500);
+    })
 });
 
 app.listen(port, () => {

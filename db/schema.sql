@@ -41,6 +41,9 @@ CREATE TABLE trip_important_info (
   us_embassy_location VARCHAR(200),
   us_embassy_latitude NUMERIC(17, 14),
   us_embassy_longitude NUMERIC(17, 14),
+  homebase_long NUMERIC(17, 14),
+  homebase_lat NUMERIC(17, 14),
+  homebase_location VARCHAR(200),
   FOREIGN KEY (trip_id) REFERENCES trips(id)
 );
 
@@ -65,7 +68,7 @@ FROM '/Users/sheebanair/Desktop/travel-bug-db/db/users.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY trip_important_info(popo_phone, popo_location, popo_latitude, popo_longitude, hospital_location, hospital_latitude, hospital_longitude, trip_id, us_embassy_location, us_embassy_latitude, us_embassy_longitude)
+COPY trip_important_info(popo_phone, popo_location, popo_latitude, popo_longitude, hospital_location, hospital_latitude, hospital_longitude, trip_id, us_embassy_location, us_embassy_latitude, us_embassy_longitude, homebase_long, homebase_lat, homebase_location)
 FROM '/Users/sheebanair/Desktop/travel-bug-db/db/trip_important_info.csv'
 DELIMITER ','
 CSV HEADER;
@@ -81,3 +84,4 @@ GRANT ALL ON TABLE trip_important_info TO travelbug;
 GRANT ALL ON TABLE messages TO travelbug;
 GRANT USAGE, SELECT ON SEQUENCE messages_id_seq TO travelbug;
 GRANT USAGE, SELECT ON SEQUENCE users_id_seq TO travelbug;
+GRANT USAGE, SELECT ON SEQUENCE trips_id_seq TO travelbug;
